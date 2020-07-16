@@ -1,0 +1,45 @@
+#include <iostream>
+#include <stdio.h>
+
+
+using namespace std;
+
+
+char nombre[100], codigo[8];
+int a, b, c, d, s;
+
+int main(){
+    printf("\tBUENOS DIAS\n");
+
+    printf("\tEscriba su nombre\n");
+    scanf("%s", &nombre);
+    
+    printf("\tEscriba su codigo\n");
+    scanf("%s", &codigo);
+
+    printf("\tEscriba su el valor A\n");
+    scanf("%d", &a);
+
+    printf("\tEscriba su el valor B\n");
+    scanf("%d", &b);
+
+    printf("\tEscriba su el valor C\n");
+    scanf("%d", &c);
+
+    printf("\tEscriba su el valor D\n");
+    scanf("%d", &d);
+
+    s = ((a*b)+c)/d;
+
+    
+
+    printf("SU NOMBRE ES: %s SU CODIGO ES: %s\n",nombre, codigo);
+    /* printf("su codigo es %d\n",codigo); */
+    printf("EL VALOR DE S ES: %d\n",s);
+
+        
+    cin.ignore();
+    cin.get();
+
+    return 0;
+}
