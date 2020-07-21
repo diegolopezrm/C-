@@ -1,0 +1,120 @@
+  
+#include <iostream>
+#include <stdio.h> 
+
+using namespace std;
+
+int a, b, c,  total;
+char oper;
+
+main(void) { 
+    printf("Introduce A\n\n"); 
+    scanf("%d", &a);
+    printf("Introduce B\n\n"); 
+    scanf("%d", &b);
+    printf("Introduce C\n\n"); 
+    scanf("%d", &c);
+
+    printf("Que operacion quiere hacer?\n"); 
+    printf("1. Ordenar de menor a mayor\n"); 
+    printf("2. Ordenar de mayor a menor\n"); 
+    printf("3. Sumar los 3 numeros\n"); 
+    
+    printf("Escribe la opcion: "); 
+    scanf("%d",&oper);
+    
+    switch(oper) { 
+        case 1 : {
+            if(a<b)
+            {
+                if (a<c)
+                {
+                    if (b<c)
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", a,b,c);
+                    }
+                    else
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", a,c,b);
+                    }
+                }
+                else
+                {
+                    printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", c,a,b);
+                }
+            }
+
+            else
+            {
+            if (a<c)
+                {
+                    printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", b,a,c);
+                    }
+                else
+                {
+                    if (c<b)
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", c,b,a);
+                    }
+                    else
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", b,c,a);
+                    }
+                }
+            }
+        }
+        break; 
+        case 2 : {
+            if(a<b)
+            {
+                if (a<c)
+                {
+                    if (b<c)
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", c,b,a);
+                    }
+                    else
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", b,c,a);
+                    }
+                }
+                else
+                {
+                    printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", b,a,c);
+                }
+            }
+
+            else
+            {
+            if (a<c)
+                {
+                    printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", c,a,b);
+                    }
+                else
+                {
+                    if (c<b)
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", a,b,c);
+                    }
+                    else
+                    {
+                        printf("Los valores ordenados de menor a mayor son: %d %d %d\n\n", a,c,b);
+                    }
+                }
+            }
+        }
+        break; 
+        case 3 :{
+            total = a+b+c;
+            printf("El resultado de tu operacion es %d\n",total);
+        }
+        break; 
+        
+        default : printf("Ops ocurrio un error, marca una opcion correcta del menu\n"); 
+        } 
+             
+    cin.ignore();
+    cin.get();
+
+    return 0;
+}
