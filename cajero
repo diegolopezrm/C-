@@ -1,0 +1,101 @@
+#include <iostream>
+#include <stdio.h> 
+
+using namespace std;
+int clavebien = 2200;
+int fondo = 800000;
+int clave, valor, enviar, retirar;
+char oper, quien[100];
+
+main(void) { 
+    printf("*********************************** \n"); 
+    printf("BIENVENIDO A ESTE CAJERO AUTOMATICO \n"); 
+    printf("*********************************** \n\n"); 
+    printf("Escribe su clave \n\n"); 
+    scanf("%d", &clave);
+
+    if (clave == clavebien)
+    {
+        printf("Que operacion desea realizar?\n");  
+        printf("a. ENVIAR DINERO\n"); 
+        printf("b. RETIRAR DINERO\n"); 
+        printf("c. CAMBIAR CLAVE\n"); 
+        
+        printf("Escribe la letra de la opcion que elegiste: "); 
+        scanf("%s",&oper);   /* code */
+
+        switch (oper)
+        {
+            case 'a':{
+                printf("a quien quiere enviarle dinero? \n\n"); 
+                scanf("%s", &quien);
+                printf("Cuanto dinero quiere enviar? \n\n"); 
+                scanf("%d", &enviar);
+                if (fondo > enviar)
+                {
+                    fondo = fondo-enviar;
+                    printf("Se ha enviado $ %d a la cuenta de %s el dia de hoy \n\n", enviar, quien);
+                    printf("Tiene en su cuenta $ %d actualmente \n\n", fondo);
+                    printf("*********************************** \n"); 
+                    printf("GRACIAS POR PREFERIRNOS \n"); 
+                    printf("*********************************** \n");
+                }
+                else
+                {
+                    printf("*********************************** \n"); 
+                    printf("ATENCION .... NO TIENE FONDOS DISPONIBLES\n\n");
+                    printf("*********************************** \n"); 
+                    printf("GRACIAS POR PREFERIRNOS \n"); 
+                    printf("*********************************** \n"); 
+                }
+            }
+            break;
+
+            case 'b':{
+                printf("Cuanto dinero quiere retirar? \n\n"); 
+                scanf("%d", &retirar);
+                if (fondo > retirar)
+                {
+                    fondo = fondo-retirar;
+                    printf("ESPERANDO... \n\n"); 
+                    for (int i = 0; i < 20; i++) {
+                        printf("....................................................................................\n\n"); 
+                    }
+                    printf("Se ha retirado de su cuenta $ %d el dia de hoy \n\n", retirar, quien);
+                    printf("Tiene en su cuenta $ %d actualmente \n\n", fondo);
+                    printf("*********************************** \n"); 
+                    printf("GRACIAS POR PREFERIRNOS \n"); 
+                    printf("*********************************** \n");
+                }
+                else
+                {
+                    printf("ATENCION .... NO TIENE FONDOS DISPONIBLES\n\n");
+                    printf("*********************************** \n"); 
+                    printf("GRACIAS POR PREFERIRNOS \n"); 
+                    printf("*********************************** \n");
+                }
+            }
+            break;
+            case 'c': {
+                printf("Escriba su nueva clave \n\n");
+                scanf("%d", &clavebien);
+                printf("Su nueva clave es %d \n\n", clavebien);
+            }
+        default: printf("Ops SU SELECCION NO ESTA DISPONIBLE\n");
+                printf("*********************************** \n"); 
+                printf("GRACIAS POR PREFERIRNOS \n"); 
+                printf("*********************************** \n");
+            break;
+        }
+    }
+    else
+    {
+        printf("*********************************** \n"); 
+        printf("ATENCION...CLAVE INCORRECTA\n"); 
+        printf("*********************************** \n");
+    }
+    cin.ignore();
+    cin.get();
+
+    return 0;
+}
